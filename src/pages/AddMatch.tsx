@@ -58,9 +58,9 @@ export default function AddMatch() {
         </p>
       </div>
       <ListMatchs />
-      <div className="overflow-y-auto py-6 flex justify-center items-start relative sm:py-12">
-        <div className="relative px-4 pt-7 pb-2 bg-dark1 max-w-md mx-auto w-3/4">
-          <h1 className="text-sky-400 text-center text-xl mb-10">LAST MATCH</h1>
+      <div className="min-h-screen h-auto overflow-y-auto py-6 flex justify-center items-start relative sm:py-12">
+        <div className="relative px-2 pt-7 pb-2 bg-dark1 max-w-md mx-auto w-4/5">
+          <h1 className="text-sky-400 text-center text-xl mb-6">LAST MATCH</h1>
           <label htmlFor="" className="block text-dark1">
             Current Deck
           </label>
@@ -88,7 +88,7 @@ export default function AddMatch() {
             className="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 bg-dark1 mb-6"
             placeholder="Opponent deck"
           />
-          <div className="flex mt-8 mb-12">
+          <div className="flex mt-8 mb-10">
             <button
               onClick={() => setLastMatch({ ...lastMatch, win: false })}
               className={`rounded-lg p-2 w-full bg-dakr1 text-white text-md font-semibold mx-2 border border-red-600 ${

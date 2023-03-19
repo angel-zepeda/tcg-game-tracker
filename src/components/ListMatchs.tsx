@@ -5,7 +5,7 @@ export const ListMatchs = () => {
   const tournamentState = useSelector(selectTournamentState);
 
   return (
-    <div className="h-40 overflow-y-auto w-full mt-2  rounded-lg border-b border-gray-700 shadow-lg p-1">
+    <div className="h-20 overflow-y-auto w-full mt-2  rounded-lg border-b border-gray-700 shadow-lg p-1">
       {tournamentState.value.matchs.map((item: any, index: number) => (
         <div
           key={index}
