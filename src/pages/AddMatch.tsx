@@ -58,7 +58,7 @@ export default function AddMatch() {
         </p>
       </div>
       <ListMatchs />
-      <div className="min-h-screen py-6 flex justify-center items-start relative overflow-hidden sm:py-12">
+      <div className="overflow-y-auto py-6 flex justify-center items-start relative sm:py-12">
         <div className="relative px-4 pt-7 pb-2 bg-dark1 max-w-md mx-auto w-3/4">
           <h1 className="text-sky-400 text-center text-xl mb-10">LAST MATCH</h1>
           <label htmlFor="" className="block text-dark1">

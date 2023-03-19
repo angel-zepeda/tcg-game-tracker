@@ -1,7 +1,9 @@
-import { setPage } from "@/store/slices/global";
+import moment from "moment";
 import Image from "next/image";
 import { ChangeEvent, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
+import { setPage } from "@/store/slices/global";
 import {
   selectTournamentState,
   setTournament,
@@ -13,7 +15,7 @@ export default function Init() {
   const dispatch = useDispatch();
   const [tournamentData, setTournamentData] = useState<TorunamentState>({
     name: "",
-    date: "",
+    date: moment().format("YYYY-MM-DD"),
     deck: "",
     tcg: "ygo",
     offitial: false,
@@ -66,7 +68,7 @@ export default function Init() {
                 className="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-8 bg-dark1"
                 placeholder="Date"
                 name="date"
-                value={tournamentData.date.toString()}
+                value={tournamentData.date}
                 onChange={handleChange}
               />
             </div>
