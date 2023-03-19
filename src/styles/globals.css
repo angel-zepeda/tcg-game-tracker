@@ -30,3 +30,8 @@ label {
   outline: 0 !important;
   box-shadow: none !important;
 }
+
+.banner-header {
+  transform: skewY(-6deg);
+  transform-origin: top left;
+}
