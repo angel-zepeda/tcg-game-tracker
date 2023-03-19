@@ -18,10 +18,15 @@ html {
 }
 
 body {
-  background-color: #f2f1f8;
+  /* background-color: #f2f1f8; */
 }
 
 label {
   @apply text-sm;
   opacity: 0.5;
+}
+
+*:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
 }

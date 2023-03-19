@@ -1,18 +1,16 @@
 import moment from "moment";
 import { ChangeEvent, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 
-import { setPage } from "@/store/slices/global";
-import {
-  selectTournamentState,
-  setTournament,
-  TorunamentState,
-} from "@/store/slices";
+import { setTournament, TorunamentState } from "@/store/slices";
 import { Header, MainCard } from "@/components";
+import { TCGs } from "@/types";
 
-export default function Init() {
-  const tournamentState = useSelector(selectTournamentState);
+export default function Tournament() {
   const dispatch = useDispatch();
+  const router = useRouter();
+  const [customError, setCustomError] = useState<string | null>(null);
   const [tournamentData, setTournamentData] = useState<TorunamentState>({
     name: "",
     date: moment().format("YYYY-MM-DD"),
@@ -24,8 +22,14 @@ export default function Init() {
 
   const createTournament = (e: any) => {
     e.preventDefault();
+    if (
+      tournamentData.deck.trim() === "" ||
+      tournamentData.name.trim() === ""
+    ) {
+      return setCustomError("Complete the form");
+    }
     dispatch(setTournament(tournamentData));
-    dispatch(setPage("Matchs"));
+    router.push("/new/match");
   };
 
   const handleChange = (
@@ -33,7 +37,7 @@ export default function Init() {
   ) => {
     const value = e.target.value;
     const name = e.target.name;
-    setTournamentData({ ...tournamentData, [name]: value });
+    setTournamentData({ ...tournamentData, [name]: value.toUpperCase() });
   };
 
   return (
@@ -78,7 +82,12 @@ export default function Init() {
           <select
             className="focus:outline-none border-b rounded-none w-full pb-2 border-gray-400 placeholder-gray-500 mb-8 bg-white"
             value={tournamentData.tcg}
-            onChange={handleChange}
+            onChange={(e: ChangeEvent<HTMLSelectElement>) => {
+              setTournamentData({
+                ...tournamentData,
+                tcg: e.target.value as TCGs,
+              });
+            }}
             name="tcg"
           >
             <option value="ygo">YU-Gi-OH</option>
@@ -100,6 +109,11 @@ export default function Init() {
             />
             <div className="px-3 text-gray-500">Offitial Tournament?</div>
           </div>
+          {customError && (
+            <h1 className="text-center text-sm text-red-400 mt-4">
+              {customError}
+            </h1>
+          )}
           <div className="flex justify-center my-6">
             <button
               className=" rounded-full p-3 w-full sm:w-56 bg-emerald-500 text-white text-lg font-semibold"
