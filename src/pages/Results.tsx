@@ -25,7 +25,7 @@ const getOpponentDecks = () => {};
 
 const getWinsByDeck = () => {};
 
-export const Results = () => {
+export default function Results() {
   const tournamentState = useSelector(selectTournamentState);
   const [data, setData] = useState<any>(null);
 
@@ -99,4 +99,4 @@ export const Results = () => {
       </div>
     </div>
   );
-};
+}

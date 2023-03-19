@@ -1,8 +1,8 @@
 import { selectGlobalState } from "@/store/slices/global";
 import { useSelector } from "react-redux";
-import { AddMatch } from "./AddMatch";
-import { Init } from "./Init";
-import { Results } from "./Results";
+import AddMatch from "./AddMatch";
+import Init from "./Init";
+import Results from "./Results";
 
 export default function Home() {
   const globalState = useSelector(selectGlobalState);

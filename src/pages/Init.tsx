@@ -8,7 +8,7 @@ import {
   TorunamentState,
 } from "@/store/slices";
 
-export const Init = () => {
+export default function Init() {
   const tournamentState = useSelector(selectTournamentState);
   const dispatch = useDispatch();
   const [tournamentData, setTournamentData] = useState<TorunamentState>({
@@ -121,4 +121,4 @@ export const Init = () => {
       </div>
     </>
   );
-};
+}

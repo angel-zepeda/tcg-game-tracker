@@ -6,7 +6,7 @@ import { addMatch } from "@/store/slices";
 import { selectTournamentState } from "@/store/slices";
 import { ConfirmModal } from "@/components";
 
-export const AddMatch = () => {
+export default function AddMatch() {
   const tournamentState = useSelector(selectTournamentState);
   const dispatch = useDispatch();
 
@@ -123,4 +123,4 @@ export const AddMatch = () => {
       </div>
     </div>
   );
-};
+}
