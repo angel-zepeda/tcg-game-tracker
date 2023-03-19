@@ -9,7 +9,7 @@ export const ConfirmModal = ({ setIsModalOpen }: ConfirmModalProps) => {
   const dispatch = useDispatch();
   return (
     <div className="bg-slate-700 bg-opacity-50 flex justify-center items-center absolute top-0 right-0 bottom-0 left-0 z-50">
-      <div className="bg-dark1 px-16 py-14 rounded-md text-center mx-10">
+      <div className="bg-white px-16 py-14 rounded-md text-center mx-10">
         <h1 className="text-xl mb-4 font-bold text-white">
           Do you want end the Tournament to see results?
         </h1>

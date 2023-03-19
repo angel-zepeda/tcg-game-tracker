@@ -9,7 +9,7 @@ export const ListMatchs = () => {
       {tournamentState.value.matchs.map((item: any, index: number) => (
         <div
           key={index}
-          className="text-white flex justify-between px-8 py-1 mt-2 bg-dark1 my-1 text-sm"
+          className="text-white flex justify-between px-8 py-1 mt-2 bg-white my-1 text-sm"
         >
           <div
             className={`w-1/3 text-left ${item.win ? "text-green-200" : ""}`}

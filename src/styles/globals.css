@@ -14,10 +14,11 @@
 }
 
 html {
-  background-color: #1b263a;
   font-family: nunito;
-  @apply text-gray-300;
-  overflow: hidden;
+}
+
+body {
+  background-color: #f2f1f8;
 }
 
 label {
