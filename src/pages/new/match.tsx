@@ -7,11 +7,12 @@ import { ConfirmModal, Header, MainCard } from "@/components";
 
 export default function Match() {
   const tournamentState = useSelector(selectTournamentState);
+
   const dispatch = useDispatch();
   const [notification, setNotification] = useState<string | null>(null);
   const [lastMatch, setLastMatch] = useState({
     win: false,
-    currentDeck: tournamentState.value.deck.toUpperCase(),
+    currentDeck: tournamentState.deck.toUpperCase(),
     opponentDeck: "",
   });
 
@@ -28,7 +29,7 @@ export default function Match() {
   };
 
   const getWinsAndLoses = () => {
-    const totalWins = tournamentState.value.matchs.reduce(
+    const totalWins = tournamentState.matchs.reduce(
       (acc: number, item: { win: boolean }) => {
         if (item.win) acc += 1;
         return acc;
@@ -36,7 +37,7 @@ export default function Match() {
       0
     );
 
-    const totalLoses = tournamentState.value.matchs.reduce(
+    const totalLoses = tournamentState.matchs.reduce(
       (acc: number, item: { win: boolean }) => {
         if (!item.win) acc += 1;
         return acc;
@@ -52,12 +53,9 @@ export default function Match() {
       <Header>
         <div className="flex flex-col items-start justify-left w-full h-full p-3">
           <h1 className="text-white text-xl text-center">
-            Tournament: {tournamentState.value.name}
+            Tournament: {tournamentState.name}
           </h1>
-          <p className="text-white text-sm">
-            {" "}
-            Deck: {tournamentState.value.deck}
-          </p>
+          <p className="text-white text-sm"> Deck: {tournamentState.deck}</p>
           <p className="text-white text-sm">
             {" "}
             Wins: {getWinsAndLoses().totalWins}
@@ -69,7 +67,7 @@ export default function Match() {
 
           <p className="text-white text-sm">
             {" "}
-            Total: {tournamentState.value.matchs.length}
+            Total: {tournamentState.matchs.length}
           </p>
         </div>
       </Header>

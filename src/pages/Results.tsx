@@ -70,27 +70,25 @@ export default function Results() {
   return (
     <div className="py-10">
       <h1 className="text-sky-600 text-center text-xl">
-        {tournamentState.value.name.toUpperCase()}
+        {tournamentState.name.toUpperCase()}
       </h1>
       <div className="p-10">
         <div className="text-white text-left text-sm flex justify-between">
-          <span className="text-sky-600">Date:</span>{" "}
-          {tournamentState.value.date}
+          <span className="text-sky-600">Date:</span> {tournamentState.date}
         </div>
         <div className="text-white text-left text-sm flex justify-between ">
-          <span className="text-sky-600">Deck:</span>{" "}
-          {tournamentState.value.deck}
+          <span className="text-sky-600">Deck:</span> {tournamentState.deck}
         </div>
         <div className="text-white text-left text-sm flex justify-between ">
           <span className="text-sky-600">Wins: </span>{" "}
-          {getWinsAndLoses(tournamentState.value.matchs).totalWins}
+          {getWinsAndLoses(tournamentState.matchs).totalWins}
         </div>
         <div className="text-white text-left text-sm  flex justify-between">
           <span className="text-sky-600">Lose:</span>{" "}
-          {getWinsAndLoses(tournamentState.value.matchs).totalLoses}
+          {getWinsAndLoses(tournamentState.matchs).totalLoses}
         </div>
         <div className="text-white text-left text-sm  flex justify-between">
-          <span className="text-sky-600">TCG:</span> {tournamentState.value.tcg}
+          <span className="text-sky-600">TCG:</span> {tournamentState.tcg}
         </div>
       </div>
 

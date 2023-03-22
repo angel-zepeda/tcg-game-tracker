@@ -16,7 +16,7 @@ export default function Tournament() {
     date: moment().format("YYYY-MM-DD"),
     deck: "",
     tcg: "ygo",
-    offitial: false,
+    official: false,
     matchs: [],
   });
 
@@ -99,15 +99,15 @@ export default function Tournament() {
               onChange={() => {
                 setTournamentData({
                   ...tournamentData,
-                  offitial: !tournamentData.offitial,
+                  official: !tournamentData.official,
                 });
               }}
               type="checkbox"
               className="border-sky-400 "
-              name="offitial"
-              checked={tournamentData.offitial}
+              name="official"
+              checked={tournamentData.official}
             />
-            <div className="px-3 text-gray-500">Offitial Tournament?</div>
+            <div className="px-3 text-gray-500">official Tournament?</div>
           </div>
           {customError && (
             <h1 className="text-center text-sm text-red-400 mt-4">

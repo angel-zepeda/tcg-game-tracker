@@ -21,5 +21,5 @@ export const globalSlice = createSlice({
 });
 
 export const { setPage } = globalSlice.actions;
-export const selectGlobalState = (state: any) => state.global;
+export const selectGlobalState = (state: any): GlobalState => state.global;
 export default globalSlice.reducer;
